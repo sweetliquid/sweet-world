@@ -1,7 +1,8 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components/macro'
 import 'tailwindcss/tailwind.css'
+import { createGlobalStyle, ThemeProvider } from 'styled-components/macro'
 
-const GlobalStyles = createGlobalStyle``
+const GlobalStyles = createGlobalStyle`
+`
 const theme = {}
 
 function MyApp({ Component, pageProps }) {
