@@ -1,7 +1,7 @@
 const { plugin } = require('postcss')
 
 module.exports = {
-  purge: ['./page/**/*.[js|jsx|ts|tsx]', './components/**/*.[js|jsx|ts|tsx]'],
+  purge: ['./page/**/*.tsx', './components/**/*.tsx'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     container: {
