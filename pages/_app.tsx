@@ -1,4 +1,4 @@
-import 'tailwindcss/tailwind.css'
+import '../styles/tailwind.css'
 import { createGlobalStyle, ThemeProvider } from 'styled-components/macro'
 
 const GlobalStyles = createGlobalStyle`
