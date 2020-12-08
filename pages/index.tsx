@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro'
+import styled, { css } from 'styled-components/macro'
 import Head from 'next/head'
 
 const HEADER = styled.div`
@@ -13,8 +13,6 @@ const TITLE = styled.h1`
 `
 
 const SUB_TITLE = styled.h2`
-  font-family: 'Noto Serif SC', Mulish, -apple-system, 'PingFang SC',
-    'Microsoft YaHei', sans-serif;
   font-size: 2rem;
   letter-spacing: 0.125rem;
   margin: 0.625rem 0;
@@ -53,21 +51,70 @@ function Flyleaf() {
   )
 }
 
+const Divider = styled.div.attrs({ className: 'my-3' })`
+  ${({ color = '#ccc' }) => css`
+    color: ${color};
+    display: flex;
+    align-items: center;
+    ::before {
+      margin-right: 1rem;
+    }
+    ::after {
+      margin-left: 1rem;
+    }
+    ::before,
+    ::after {
+      content: '';
+      flex: auto;
+      background-color: ${color};
+      height: 1px;
+    }
+  `}
+`
+
+const Cover = styled.div`
+  clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
+`
+
 function Content() {
-  return <div className="min-h-screen">Content</div>
+  return (
+    <main>
+      <div className="mx-auto p-3">
+        <Divider color="#ccc">
+          <h2 className="text-xl font-bold">置顶文章</h2>
+        </Divider>
+        <div className="">
+          <article className="shadow rounded-xl m-3 h-56 hover:shadow-xl flex overflow-hidden">
+            <Cover className="w-1/2">
+              <img
+                className="rounded-l-xl transition transform hover:scale-110 hover:rotate-3"
+                src="https://tva4.sinaimg.cn/mw690/6833939bly1gipewf5l51j20zk0m8b29.jpg"
+              />
+            </Cover>
+          </article>
+        </div>
+        <Divider color="#ccc">
+          <h2 className="text-xl font-bold">精选分类</h2>
+        </Divider>
+        <Divider color="#ccc">
+          <h2 className="text-xl font-bold">文章列表</h2>
+        </Divider>
+      </div>
+    </main>
+  )
 }
 
 function Sidebar() {
-  return <div>Sidebar</div>
+  return <div className="bg-gray-400 h-full ml-6"></div>
 }
 
 function Footer() {
-  return <div>Footer</div>
+  return <div></div>
 }
 
 export default function Home() {
   return (
-    <div className="bg-gray-500">
+    <div>
       <Head>
         <title>Sweet Liquid 的理想乡</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -80,13 +127,19 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <HEADER className="text-white text">
+      <HEADER className="text-white text bg-gray-400">
         <Navigation />
         <Flyleaf />
       </HEADER>
-      <Content />
-      <Sidebar />
-      <Footer />
+      <div className="flex container">
+        <div className="flex-auto shadow-lg">
+          <Content />
+          <Footer />
+        </div>
+        <div className="hidden md:block w-60">
+          <Sidebar />
+        </div>
+      </div>
     </div>
   )
 }
