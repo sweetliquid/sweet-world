@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components/macro'
 import Head from 'next/head'
-import React from 'react'
+import React, { FC } from 'react'
 import Flyleaf from '../components/Flyleaf'
+import { ImageCard } from '../components/ImageCard'
 
 const Header = styled.div`
   text-shadow: 4px 4px 4px pink;
@@ -41,10 +42,6 @@ const Divider = styled.div`
   }
 `
 
-const Cover = styled.div`
-  clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
-`
-
 function Content() {
   return (
     <main>
@@ -52,16 +49,7 @@ function Content() {
         <Divider className="text-gray-400 my-3" color="#ccc">
           <h2 className="text-xl font-bold px-3">置顶文章</h2>
         </Divider>
-        <div className="">
-          <article className="shadow rounded-xl m-3 h-56 hover:shadow-xl flex overflow-hidden">
-            <Cover className="w-1/2">
-              <img
-                className="rounded-l-xl transition transform hover:scale-110 hover:rotate-3 object-cover size-full"
-                src="https://tva4.sinaimg.cn/mw690/6833939bly1gipewf5l51j20zk0m8b29.jpg"
-              />
-            </Cover>
-          </article>
-        </div>
+        <ImageCard></ImageCard>
         <Divider className="text-gray-400 my-3" color="#ccc">
           <h2 className="text-xl font-bold px-3">精选分类</h2>
         </Divider>
