@@ -14,7 +14,7 @@ const Wrapper = styled.article`
   }
 `
 
-export function ImageCard({
+export default function ImageCard({
   // TODO: Replace default background image
   backgroundImage = 'https://tva4.sinaimg.cn/mw690/6833939bly1gipewf5l51j20zk0m8b29.jpg',
 }) {

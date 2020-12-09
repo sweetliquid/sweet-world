@@ -2,7 +2,7 @@ import styled from 'styled-components/macro'
 import Head from 'next/head'
 import React from 'react'
 import Flyleaf from '../components/Flyleaf'
-import { ImageCard } from '../components/ImageCard'
+import ImageCard from '../components/ImageCard'
 import Divider from '../components/Divider'
 
 const Header = styled.div`
