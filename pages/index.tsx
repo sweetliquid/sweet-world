@@ -1,8 +1,9 @@
-import styled, { css } from 'styled-components/macro'
+import styled from 'styled-components/macro'
 import Head from 'next/head'
-import React, { FC } from 'react'
+import React from 'react'
 import Flyleaf from '../components/Flyleaf'
 import { ImageCard } from '../components/ImageCard'
+import Divider from '../components/Divider'
 
 const Header = styled.div`
   text-shadow: 4px 4px 4px pink;
@@ -30,32 +31,30 @@ function Navigation() {
   )
 }
 
-const Divider = styled.div`
-  display: flex;
-  align-items: center;
-  ::before,
-  ::after {
-    content: '';
-    flex: auto;
-    border-top: 1px solid;
-    height: 1px;
-  }
-`
-
 function Content() {
   return (
     <main>
       <div className="shadow mx-auto p-3">
-        <Divider className="text-gray-400 my-3" color="#ccc">
-          <h2 className="text-xl font-bold px-3">置顶文章</h2>
-        </Divider>
-        <ImageCard></ImageCard>
-        <Divider className="text-gray-400 my-3" color="#ccc">
-          <h2 className="text-xl font-bold px-3">精选分类</h2>
-        </Divider>
-        <Divider className="text-gray-400 my-3" color="#ccc">
-          <h2 className="text-xl font-bold px-3">文章列表</h2>
-        </Divider>
+        <div>
+          <Divider className="text-gray-400 gap-3">
+            <h2 className="text-xl font-bold">置顶文章</h2>
+          </Divider>
+          <ImageCard />
+        </div>
+        <div>
+          <Divider className="text-gray-400 gap-3">
+            <h2 className="text-xl font-bold">精选分类</h2>
+          </Divider>
+          <ImageCard />
+          <ImageCard />
+        </div>
+        <div>
+          <Divider className="text-gray-400 gap-3">
+            <h2 className="text-xl font-bold">文章列表</h2>
+          </Divider>
+          <ImageCard />
+          <ImageCard />
+        </div>
       </div>
     </main>
   )
