@@ -29,25 +29,16 @@ function Navigation() {
   )
 }
 
-const Divider = styled.div.attrs({ className: 'my-3' })`
-  ${({ color = '#ccc' }) => css`
-    color: ${color};
-    display: flex;
-    align-items: center;
-    ::before {
-      margin-right: 1rem;
-    }
-    ::after {
-      margin-left: 1rem;
-    }
-    ::before,
-    ::after {
-      content: '';
-      flex: auto;
-      background-color: ${color};
-      height: 1px;
-    }
-  `}
+const Divider = styled.div`
+  display: flex;
+  align-items: center;
+  ::before,
+  ::after {
+    content: '';
+    flex: auto;
+    border-top: 1px solid;
+    height: 1px;
+  }
 `
 
 const Cover = styled.div`
@@ -58,8 +49,8 @@ function Content() {
   return (
     <main>
       <div className=" shadow mx-auto p-3">
-        <Divider color="#ccc">
-          <h2 className="text-xl font-bold">置顶文章</h2>
+        <Divider className="text-gray-400 my-3" color="#ccc">
+          <h2 className="text-xl font-bold px-3">置顶文章</h2>
         </Divider>
         <div className="">
           <article className="shadow rounded-xl m-3 h-56 hover:shadow-xl flex overflow-hidden">
@@ -71,11 +62,11 @@ function Content() {
             </Cover>
           </article>
         </div>
-        <Divider color="#ccc">
-          <h2 className="text-xl font-bold">精选分类</h2>
+        <Divider className="text-gray-400 my-3" color="#ccc">
+          <h2 className="text-xl font-bold px-3">精选分类</h2>
         </Divider>
-        <Divider color="#ccc">
-          <h2 className="text-xl font-bold">文章列表</h2>
+        <Divider className="text-gray-400 my-3" color="#ccc">
+          <h2 className="text-xl font-bold px-3">文章列表</h2>
         </Divider>
       </div>
     </main>
