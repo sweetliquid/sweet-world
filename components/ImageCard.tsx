@@ -2,14 +2,16 @@ import React from 'react'
 import cx from 'classnames'
 import styled from 'styled-components/macro'
 
-const Cover = styled.img`
+const Cover = styled.div`
   clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
 `
 
+const CoverImage = styled.img``
+
 const Wrapper = styled.article`
   :hover {
-    ${Cover} {
-      transform: scale(1.1) rotate(3deg);
+    ${CoverImage} {
+      transform: scale(1.3) rotate(6deg);
     }
   }
 `
@@ -31,19 +33,12 @@ export default function ImageCard({
         'hover:shadow-xl'
       )}
     >
-      <div className="w-1/2">
-        <Cover
-          className={cx(
-            'w-full',
-            'h-full',
-
-            'rounded-l-xl',
-            'object-cover',
-            'transition'
-          )}
+      <Cover className="overflow-hidden rounded-l-xl w-1/2">
+        <CoverImage
+          className="transition object-cover w-full h-full"
           src={backgroundImage}
         />
-      </div>
+      </Cover>
     </Wrapper>
   )
 }
