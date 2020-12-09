@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 import Head from 'next/head'
-import React from 'react'
+import React, { FC } from 'react'
 import Flyleaf from '../components/Flyleaf'
 import ImageCard from '../components/ImageCard'
 import Divider from '../components/Divider'
@@ -9,21 +9,47 @@ const Header = styled.div`
   text-shadow: 4px 4px 4px pink;
 `
 
+const NavItemUnderLine = styled.div`
+  border-top: 3px solid;
+  width: 0;
+  margin: 0 auto;
+  transition: all 0.5s;
+`
+
+const NavItemWrapper = styled.div`
+  :hover ${NavItemUnderLine} {
+    width: 100%;
+  }
+`
+
+const NavItem: FC<{ active?: boolean }> = ({ children }) => (
+  <NavItemWrapper className="cursor-pointer">
+    <div>{children}</div>
+    <NavItemUnderLine />
+  </NavItemWrapper>
+)
+
 function Navigation() {
   return (
-    <div className="shadow-md">
-      <div className="flex container p-2 gap-1">
+    <div className="shadow-md sticky inset-0">
+      <div className="flex container py-3 gap-5 text-md">
         <p className="md:hidden">X</p>
-        <p className="text-center flex-auto md:flex-initial">Sweet Liquid</p>
-        <div className="hidden md:flex gap-1">
-          <p>主页</p>
-          <p>关于</p>
-          <p>文章</p>
-          <p>链环</p>
-          <p>开往</p>
+        <p className="cursor-pointer text-center flex-auto md:flex-initial">
+          Sweet Liquid
+        </p>
+        <div className="hidden md:flex gap-5">
+          <NavItem>主页</NavItem>
+          <NavItem>关于</NavItem>
+          <NavItem>文章</NavItem>
+          <NavItem>链环</NavItem>
+          <NavItem>开往</NavItem>
         </div>
-        <p className="ml-auto">Theme</p>
-        <p>Search</p>
+        <p className="cursor-pointer transition-transform transform hover:scale-150 ml-auto">
+          Theme
+        </p>
+        <p className="cursor-pointer transition-transform transform hover:scale-150">
+          Search
+        </p>
       </div>
     </div>
   )
