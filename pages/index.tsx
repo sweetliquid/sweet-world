@@ -5,19 +5,6 @@ const HEADER = styled.div`
   text-shadow: 4px 4px 4px pink;
 `
 
-const TITLE = styled.h1`
-  font-family: 'Fredericka the Great', Mulish, -apple-system, 'PingFang SC',
-    'Microsoft YaHei', sans-serif;
-  font-size: 3.5rem;
-  line-height: 1.2;
-`
-
-const SUB_TITLE = styled.h2`
-  font-size: 2rem;
-  letter-spacing: 0.125rem;
-  margin: 0.625rem 0;
-`
-
 function Navigation() {
   return (
     <div className="shadow-md">
@@ -35,17 +22,6 @@ function Navigation() {
         </div>
         <p className="m-1 ml-auto">Theme</p>
         <p className="m-1">Search</p>
-      </div>
-    </div>
-  )
-}
-
-function Flyleaf() {
-  return (
-    <div className="h-screen/2 flex justify-center items-center">
-      <div className="text-right">
-        <TITLE>Sweet Liquid</TITLE>
-        <SUB_TITLE>的理想乡</SUB_TITLE>
       </div>
     </div>
   )
