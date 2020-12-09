@@ -14,11 +14,12 @@ export function ImageCard({
       <Cover className="w-1/2">
         <img
           className={cx(
+            // shape
             'size-full',
-
             'object-cover',
             'rounded-l-xl',
 
+            // transition
             'transition',
             'transform',
             'hover:scale-110',
