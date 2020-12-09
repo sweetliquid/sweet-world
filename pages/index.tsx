@@ -16,11 +16,11 @@ function Navigation() {
         <p className="md:hidden">X</p>
         <p className="text-center flex-auto md:flex-initial">Sweet Liquid</p>
         <div className="hidden md:flex gap-1">
-          <p>Home</p>
-          <p>About</p>
-          <p>Post</p>
-          <p>Link</p>
-          <p>Goto</p>
+          <p>主页</p>
+          <p>关于</p>
+          <p>文章</p>
+          <p>链环</p>
+          <p>开往</p>
         </div>
         <p className="ml-auto">Theme</p>
         <p>Search</p>
