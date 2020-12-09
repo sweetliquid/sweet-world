@@ -12,20 +12,18 @@ const Header = styled.div`
 function Navigation() {
   return (
     <div className="shadow-md">
-      <div className="flex container p-2">
-        <p className="m-1 md:hidden">X</p>
-        <p className="m-1 text-center flex-auto md:flex-initial">
-          Sweet Liquid
-        </p>
-        <div className="hidden md:flex">
-          <p className="m-1">Home</p>
-          <p className="m-1">About</p>
-          <p className="m-1">Post</p>
-          <p className="m-1">Link</p>
-          <p className="m-1">Goto</p>
+      <div className="flex container p-2 gap-1">
+        <p className="md:hidden">X</p>
+        <p className="text-center flex-auto md:flex-initial">Sweet Liquid</p>
+        <div className="hidden md:flex gap-1">
+          <p>Home</p>
+          <p>About</p>
+          <p>Post</p>
+          <p>Link</p>
+          <p>Goto</p>
         </div>
-        <p className="m-1 ml-auto">Theme</p>
-        <p className="m-1">Search</p>
+        <p className="ml-auto">Theme</p>
+        <p>Search</p>
       </div>
     </div>
   )
