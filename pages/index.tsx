@@ -45,7 +45,7 @@ const Divider = styled.div`
 function Content() {
   return (
     <main>
-      <div className=" shadow mx-auto p-3">
+      <div className="shadow mx-auto p-3">
         <Divider className="text-gray-400 my-3" color="#ccc">
           <h2 className="text-xl font-bold px-3">置顶文章</h2>
         </Divider>
