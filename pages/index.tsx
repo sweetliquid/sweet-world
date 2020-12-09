@@ -3,7 +3,7 @@ import Head from 'next/head'
 import React from 'react'
 import Flyleaf from '../components/Flyleaf'
 
-const HEADER = styled.div`
+const Header = styled.div`
   text-shadow: 4px 4px 4px pink;
 `
 
@@ -57,7 +57,7 @@ const Cover = styled.div`
 function Content() {
   return (
     <main>
-      <div className="mx-auto p-3">
+      <div className=" shadow mx-auto p-3">
         <Divider color="#ccc">
           <h2 className="text-xl font-bold">置顶文章</h2>
         </Divider>
@@ -105,10 +105,10 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <HEADER className="text-white text bg-gray-400">
+      <Header className="text-white text bg-gray-400">
         <Navigation />
         <Flyleaf />
-      </HEADER>
+      </Header>
       <div className="flex container">
         <div className="flex-auto shadow-lg">
           <Content />
