@@ -87,7 +87,7 @@ function Content() {
           <article className="shadow rounded-xl m-3 h-56 hover:shadow-xl flex overflow-hidden">
             <Cover className="w-1/2">
               <img
-                className="rounded-l-xl transition transform hover:scale-110 hover:rotate-3"
+                className="rounded-l-xl transition transform hover:scale-110 hover:rotate-3 object-cover h-full"
                 src="https://tva4.sinaimg.cn/mw690/6833939bly1gipewf5l51j20zk0m8b29.jpg"
               />
             </Cover>
