@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components/macro'
 import Head from 'next/head'
+import React from 'react'
+import Flyleaf from '../components/Flyleaf'
 
 const HEADER = styled.div`
   text-shadow: 4px 4px 4px pink;
