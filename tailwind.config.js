@@ -9,6 +9,16 @@ module.exports = {
       height: theme => ({
         'screen/2': '50vh',
       }),
+      fontFamily: {
+        art: [
+          'Fredericka the Great',
+          'Mulish',
+          '-apple-system',
+          'PingFang SC',
+          'Microsoft YaHei',
+          'sans-serif',
+        ],
+      },
     },
   },
   variants: {
